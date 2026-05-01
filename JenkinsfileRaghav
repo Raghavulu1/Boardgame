@@ -7,6 +7,13 @@ pipeline {
     }
 
     stages {     
+        stage('New-JenkinsFile') {
+            steps {
+                echo "New-JenkinsFile"
+            }
+        }    
+
+
         stage('Compile') {
             steps {
                sh "mvn compile"
@@ -22,6 +29,12 @@ pipeline {
         stage('Build') {
             steps {
                 sh "mvn package"
+            }
+        }
+
+        stage('Hello World') {
+            steps {
+                echo "Hello World"
             }
         }
     }
